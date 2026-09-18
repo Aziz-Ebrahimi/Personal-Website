@@ -1,5 +1,6 @@
 'use client';
 
+import { assetPath } from '@/lib/assetPath';
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
@@ -226,7 +227,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                     <div className="w-full md:w-48 flex-shrink-0">
                                         <div className="aspect-video md:aspect-[4/3] relative rounded-lg overflow-hidden bg-neutral-100 dark:bg-neutral-800">
                                             <Image
-                                                src={`/papers/${pub.preview}`}
+                                                src={assetPath(`/papers/${pub.preview}`)}
                                                 alt={pub.title}
                                                 fill
                                                 className="object-cover"

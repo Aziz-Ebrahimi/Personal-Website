@@ -1,3 +1,4 @@
+import { assetPath } from '@/lib/assetPath';
 import type { Metadata } from 'next';
 import './globals.css';
 import Navigation from '@/components/layout/Navigation';
@@ -24,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
     creator: config.author.name,
     publisher: config.author.name,
     icons: {
-      icon: config.site.favicon,
+      icon: assetPath(config.site.favicon),
     },
     openGraph: {
       type: 'website',
@@ -131,7 +132,7 @@ export default function RootLayout({
   return (
     <html lang={runtimeI18n.defaultLocale} className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="icon" href={config.site.favicon} type="image/svg+xml" />
+        <link rel="icon" href={assetPath(config.site.favicon)} type="image/svg+xml" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

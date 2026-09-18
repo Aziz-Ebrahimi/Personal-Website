@@ -1,5 +1,6 @@
 'use client';
 
+import { assetPath } from '@/lib/assetPath';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
@@ -31,7 +32,7 @@ function MemberCard({ member, index }: { member: CardItem; index: number }) {
             <div className="relative mx-auto mb-3 h-24 w-24 overflow-hidden rounded-full border-2 border-white bg-neutral-100 shadow-sm ring-1 ring-neutral-200 dark:border-neutral-900 dark:bg-neutral-800 dark:ring-neutral-700">
                 {member.image && (
                     <Image
-                        src={member.image}
+                        src={assetPath(member.image)}
                         alt={`${member.title} headshot`}
                         fill
                         className="object-cover"
@@ -74,7 +75,7 @@ export default function TeamPage({ config }: { config: CardPageConfig }) {
                     <div className="flex flex-col items-center gap-5 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm sm:flex-row sm:items-start dark:border-neutral-800 dark:bg-neutral-900">
                         <div className="relative h-32 w-32 flex-none overflow-hidden rounded-full bg-neutral-100 ring-1 ring-neutral-200 dark:bg-neutral-800 dark:ring-neutral-700">
                             {principalInvestigator.image && (
-                                <Image src={principalInvestigator.image} alt={`${principalInvestigator.title} headshot`} fill className="object-cover" sizes="128px" />
+                                <Image src={assetPath(principalInvestigator.image)} alt={`${principalInvestigator.title} headshot`} fill className="object-cover" sizes="128px" />
                             )}
                         </div>
                         <div className="min-w-0 text-center sm:text-left">

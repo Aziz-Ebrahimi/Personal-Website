@@ -1,5 +1,6 @@
 'use client';
 
+import { assetPath } from '@/lib/assetPath';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -43,7 +44,7 @@ export default function ResearchOverviewPage({ config }: { config: CardPageConfi
                                 className="relative aspect-[16/10] overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.08)] dark:border-neutral-800 dark:bg-neutral-900"
                             >
                                 <Image
-                                    src={item.image}
+                                    src={assetPath(item.image)}
                                     alt={`${item.title} research visual`}
                                     fill
                                     className="object-contain p-3"

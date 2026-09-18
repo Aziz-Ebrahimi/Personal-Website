@@ -1,5 +1,6 @@
 'use client';
 
+import { assetPath } from '@/lib/assetPath';
 import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
@@ -61,7 +62,7 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                         {item.image && (
                             <div className="relative w-full aspect-video mb-5 overflow-hidden rounded-lg bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700">
                                 <Image
-                                    src={item.image}
+                                    src={assetPath(item.image)}
                                     alt={`${item.title} image`}
                                     fill
                                     className="object-contain"

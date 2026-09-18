@@ -1,5 +1,6 @@
 'use client';
 
+import { assetPath } from '@/lib/assetPath';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -39,7 +40,7 @@ export default function ResearchProjectPage({ project }: { project: ResearchProj
 
             {project.image && (
                 <div className="relative mb-14 aspect-[16/8] w-full overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.08)] dark:border-neutral-800 dark:bg-neutral-900">
-                    <Image src={project.image} alt={`${project.title} project visual`} fill className="object-contain p-5" sizes="(max-width: 1200px) 100vw, 1152px" priority />
+                    <Image src={assetPath(project.image)} alt={`${project.title} project visual`} fill className="object-contain p-5" sizes="(max-width: 1200px) 100vw, 1152px" priority />
                 </div>
             )}
 
