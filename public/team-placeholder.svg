@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="t d">
+  <title id="t">Team member portrait placeholder</title><desc id="d">A neutral silhouette for a future team photograph.</desc>
+  <rect width="800" height="450" rx="24" fill="#edf1ec"/>
+  <circle cx="400" cy="165" r="80" fill="#9caf9b"/>
+  <path d="M225 400c20-112 83-168 175-168s155 56 175 168" fill="#789177"/>
+  <text x="400" y="430" text-anchor="middle" fill="#405840" font-family="Arial,sans-serif" font-size="22" letter-spacing="3">ADD TEAM PHOTO</text>
+</svg>

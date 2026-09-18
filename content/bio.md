@@ -1,5 +1,5 @@
-I am a PhD student at the School of Science, University of Example, advised by [Prof. Advisor One](https://example.com) and [Dr. Advisor Two](https://example.com).
+I am an Assistant Professor of **Forest Genetics, Genomics & Tree Breeding** in the Warnell School of Forestry and Natural Resources at the University of Georgia. My research integrates forest genetics and genomics, tree breeding, conservation genomics, phenomics, remote sensing, and bioinformatics to understand adaptation, resilience, and genetic diversity in forest trees.
 
-Prior to this, I obtained a BSc degree with First Class Honours in Natural Science from the University of Example.
+I earned my PhD in Forest Genetics and Genomics from Purdue University, where my dissertation examined morpho-physiological and genomic mechanisms underlying hardwood-tree adaptation to abiotic stress. My previous roles include Research Scientist and USDA-NIFA Postdoctoral Fellow with Purdue's Hardwood Tree Improvement and Regeneration Center, along with research positions involving tree breeding, data science, and forest genetics.
 
-My current research focuses on investigating the mathematical principles of natural philosophy.
+My work spans threatened butternut conservation, comparative genomics of Juglandaceae, climate adaptation, forest health, advanced phenotyping, and machine-learning applications. I combine field trials and population-level sampling with genomic tools, physiological measurements, spectral phenotyping, and UAV-based remote sensing. The long-term goal of my program is to translate genomic and phenomic information into practical tools for tree improvement, seed sourcing, germplasm conservation, and climate-resilient forest restoration.

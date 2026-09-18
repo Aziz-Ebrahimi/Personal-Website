@@ -1,27 +1,33 @@
 type = "card"
 title = "Awards"
-description = "Honors and awards I have received."
+description = "Selected fellowships and awards supporting research in forest genetics, genomics, digital forestry, and conservation."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2025"
-content = "Description of the award."
-
-[[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "Walder Foundation Biota Fellowship Award"
+subtitle = "Walder Foundation"
 date = "2024"
-content = "Description of the award."
+content = "Selected fellowship supporting research in biodiversity and conservation."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2023"
-content = "Description of the award."
+title = "Institute of Digital Forestry PERSUS Fellowship"
+subtitle = "Purdue University Institute of Digital Forestry"
+date = "2024"
+content = "Selected fellowship supporting digital forestry research."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2022"
-content = "Description of the award."
+title = "USDA-NIFA Postdoctoral Fellowship"
+subtitle = "USDA National Institute of Food and Agriculture"
+date = "To be added"
+content = "Postdoctoral fellowship supporting forest genetics and genomics research."
+
+[[items]]
+title = "Bilsland Dissertation Fellowship"
+subtitle = "Purdue University"
+date = "To be added"
+content = "Fellowship details: To be added."
+
+[[items]]
+title = "Ross Fellowship"
+subtitle = "Purdue University"
+date = "To be added"
+content = "Fellowship details: To be added."

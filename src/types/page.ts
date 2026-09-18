@@ -22,9 +22,12 @@ export interface CardItem {
     tags?: string[];
     link?: string;
     image?: string;
+    category?: string;
+    affiliation?: string;
 }
 
 export interface CardPageConfig extends BasePageConfig {
     type: 'card';
+    layout?: 'cards' | 'team' | 'research';
     items: CardItem[];
 }

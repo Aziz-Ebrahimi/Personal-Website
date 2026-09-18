@@ -68,6 +68,7 @@ export type PublicationType =
 
 export type PublicationStatus =
   | 'published'
+  | 'preprint'
   | 'accepted'
   | 'under-review'
   | 'submitted'

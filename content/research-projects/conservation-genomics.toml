@@ -1,0 +1,22 @@
+title = "Conservation Genomics of Butternut"
+subtitle = "Genomics and phenomics for forest restoration"
+category = "Conservation Genomics & Forest Restoration"
+image = "/research-genetics.svg"
+summary = "This project integrates population and landscape genetics, hybrid identification, disease-resistance assessment, field trials, and advanced phenotyping to support conservation and restoration of threatened butternut (Juglans cinerea)."
+related_publications_category = "Conservation Genomics"
+
+[[sections]]
+title = "Research Questions"
+content = "How can genomic tools identify hybrids and characterize remaining genetic diversity? Which genotypes show useful disease resistance, and how can that evidence improve conservation and restoration decisions?"
+
+[[sections]]
+title = "Approach"
+content = "The project combines population and landscape genomics, SNP-based hybrid identification, disease-resistance assessment, field trials, habitat-suitability analysis, and high-throughput phenotyping. Study regions and datasets: **To be added**."
+
+[[sections]]
+title = "Impact"
+content = "The research is designed to support germplasm conservation, restoration planning, and evidence-based selection of butternut material. Additional verified findings and restoration outcomes: **To be added**."
+
+[[sections]]
+title = "Collaborators and Support"
+content = "Collaborators, partner organizations, funding sources, grant numbers, and approved acknowledgments: **To be added**."

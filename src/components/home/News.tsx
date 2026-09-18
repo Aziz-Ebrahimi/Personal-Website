@@ -23,12 +23,12 @@ export default function News({ items, title }: NewsProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
         >
-            <h2 className="text-2xl font-serif font-bold text-primary mb-4">{resolvedTitle}</h2>
+            <h2 className="mb-5 text-[28px] font-bold tracking-tight text-primary">{resolvedTitle}</h2>
             <div className="space-y-3">
                 {items.map((item, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                        <span className="text-xs text-neutral-500 mt-1 w-16 flex-shrink-0">{item.date}</span>
-                        <p className="text-sm text-neutral-700">{item.content}</p>
+                    <div key={index} className="flex items-start gap-3">
+                        {item.date && <span className="mt-1 w-20 flex-shrink-0 text-sm text-neutral-500">{item.date}</span>}
+                        <p className="text-base leading-6 text-neutral-700 dark:text-neutral-300">{item.content}</p>
                     </div>
                 ))}
             </div>

@@ -1,10 +1,10 @@
 type = "card"
 title = "Teaching"
-description = "Courses I have taught or assisted with."
+description = "Current and upcoming courses."
 
 [[items]]
-title = "Example Course"
-subtitle = "Teaching Assistant"
-date = "2024"
-content = "Description of the course and responsibilities. Content of this course can be found [here](https://example.com)."
-tags = ["Undergraduate", "CS"]
+title = "Forest Genetics; Tree Improvement and Biotechnology"
+subtitle = "Instructor"
+date = "To be added"
+content = "Course number, student level, description, syllabus, office hours, and public course link: To be added after the University of Georgia course is finalized."
+tags = ["Course details to be added"]

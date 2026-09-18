@@ -1,26 +1,32 @@
 ## Education
 
-**The University of Example**, PhD in Natural Science, *2025 - Present*
-- Research focus: Mathematical Principles of Natural Philosophy
-- Supervisor: Prof. Advisor One and Dr. Advisor Two
+**Purdue University**, PhD in Forest Genetics and Genomics, *Year to be added*
+- Dissertation: Morpho-physiological and genomic mechanisms underlying hardwood-tree adaptation to abiotic stress
 
-**The University of Example**, BSc in Natural Science, *2021 - 2025*
-- Graduated with First Class Honours
+Additional degrees and dates: **To be added**.
 
-## Experience
+## Academic Appointments
 
-**Example Role**
-Company/Institution
-*2023 - 2024*
-- Description of key responsibilities and achievements.
-- Utilized skills to solve problems.
+**Assistant Professor of Forest Genetics, Genomics & Tree Breeding**, University of Georgia, *2026–Present*
 
-## Skills
+**Research Scientist**, Hardwood Tree Improvement and Regeneration Center, Purdue University, *Dates to be added*
 
-- **Programming:** Python, C++, MATLAB, LaTeX
-- **Data Analysis:** Pandas, NumPy, SciPy
-- **Languages:** English (Native), French (Fluent)
+**USDA-NIFA Postdoctoral Fellow**, Purdue University, *Dates to be added*
+
+## Research Areas
+
+- Forest genetics and genomics
+- Tree breeding
+- Conservation genomics and forest restoration
+- Phenomics, remote sensing, and digital forestry
+- Bioinformatics, data science, and machine learning
 
 ## Awards & Honors
 
-- **First Prize in Example Competition** - Committee of Example (*2024*)
+- **Walder Foundation Biota Fellowship Award**, Walder Foundation (*2024*)
+- **Institute of Digital Forestry PERSUS Fellowship**, Purdue University (*2024*)
+- **USDA-NIFA Postdoctoral Fellowship** (*Year to be added*)
+
+## Note
+
+The complete CV, additional appointments, 35-publication record, grants and funding, teaching record, mentoring, and professional memberships will be added after final verification and approval for publication.

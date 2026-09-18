@@ -1,0 +1,22 @@
+title = "Comparative and Phylogenomics of Juglandaceae"
+subtitle = "Bioinformatics, data science, and machine learning"
+category = "Bioinformatics & Comparative Genomics"
+image = "/research-ai.svg"
+summary = "This research applies nuclear and plastid genome analysis, phylogenomics, comparative genomics, pangenome approaches, and data-science methods to investigate evolutionary relationships, genome diversity, and adaptation in Juglandaceae and other hardwood species."
+related_publications_category = "Bioinformatics/Machine Learning"
+
+[[sections]]
+title = "Research Questions"
+content = "What do nuclear and plastid genomes reveal about evolutionary relationships and genomic diversity? How can comparative and pangenome analyses clarify adaptation across hardwood lineages?"
+
+[[sections]]
+title = "Approach"
+content = "The work uses genome assembly and annotation, comparative genomics, phylogenomics, pangenome analysis, sequence-data mining, and machine-learning workflows. Species coverage, reference datasets, and software resources: **To be added**."
+
+[[sections]]
+title = "Impact"
+content = "The research provides evolutionary and genomic context for conservation, breeding, and climate-adaptation studies. Current datasets, validated findings, code, and public resources: **To be added**."
+
+[[sections]]
+title = "Collaborators and Support"
+content = "Collaborators, partner organizations, funding sources, grant numbers, and approved acknowledgments: **To be added**."

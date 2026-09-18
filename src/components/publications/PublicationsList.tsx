@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import {
@@ -23,11 +23,19 @@ interface PublicationsListProps {
     embedded?: boolean;
 }
 
+const PUBLICATION_CATEGORIES = [
+    'Forest Genetics/Genomics',
+    'Conservation Genomics',
+    'Phenomics/Remote Sensing',
+    'Bioinformatics/Machine Learning',
+];
+
 export default function PublicationsList({ config, publications, embedded = false }: PublicationsListProps) {
     const messages = useMessages();
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedYear, setSelectedYear] = useState<number | 'all'>('all');
     const [selectedType, setSelectedType] = useState<string | 'all'>('all');
+    const [selectedCategory, setSelectedCategory] = useState<string | 'all'>('all');
     const [showFilters, setShowFilters] = useState(false);
     const [expandedBibtexId, setExpandedBibtexId] = useState<string | null>(null);
     const [expandedAbstractId, setExpandedAbstractId] = useState<string | null>(null);
@@ -43,6 +51,13 @@ export default function PublicationsList({ config, publications, embedded = fals
         return uniqueTypes.sort();
     }, [publications]);
 
+    useEffect(() => {
+        const requestedCategory = new URLSearchParams(window.location.search).get('category');
+        if (requestedCategory && PUBLICATION_CATEGORIES.includes(requestedCategory)) {
+            setSelectedCategory(requestedCategory);
+        }
+    }, []);
+
     // Filter publications
     const filteredPublications = useMemo(() => {
         return publications.filter(pub => {
@@ -54,10 +69,11 @@ export default function PublicationsList({ config, publications, embedded = fals
 
             const matchesYear = selectedYear === 'all' || pub.year === selectedYear;
             const matchesType = selectedType === 'all' || pub.type === selectedType;
+            const matchesCategory = selectedCategory === 'all' || pub.tags.some(tag => tag.toLowerCase() === selectedCategory.toLowerCase());
 
-            return matchesSearch && matchesYear && matchesType;
+            return matchesSearch && matchesYear && matchesType && matchesCategory;
         });
-    }, [publications, searchQuery, selectedYear, selectedType]);
+    }, [publications, searchQuery, selectedYear, selectedType, selectedCategory]);
 
     return (
         <motion.div
@@ -76,6 +92,12 @@ export default function PublicationsList({ config, publications, embedded = fals
 
             {/* Search and Filter Controls */}
             <div className="mb-8 space-y-4">
+                <div className="flex flex-wrap gap-2" aria-label="Publication categories">
+                    <button onClick={() => setSelectedCategory('all')} className={cn("px-4 py-2 rounded-full text-sm font-medium border transition-colors", selectedCategory === 'all' ? "bg-accent text-white border-accent" : "bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-600 hover:border-accent hover:text-accent")}>All</button>
+                    {PUBLICATION_CATEGORIES.map(category => (
+                        <button key={category} onClick={() => setSelectedCategory(category)} className={cn("px-4 py-2 rounded-full text-sm font-medium border transition-colors", selectedCategory === category ? "bg-accent text-white border-accent" : "bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-600 hover:border-accent hover:text-accent")}>{category}</button>
+                    ))}
+                </div>
                 {/* ... (keep existing controls) ... */}
                 <div className="flex flex-col sm:flex-row gap-4">
                     <div className="relative flex-grow">
@@ -214,41 +236,42 @@ export default function PublicationsList({ config, publications, embedded = fals
                                     </div>
                                 )}
                                 <div className="flex-grow">
-                                    <h3 className={`${embedded ? "text-lg" : "text-xl"} font-semibold text-primary mb-2 leading-tight`}>
+                                    <h3 className={`${embedded ? "text-xl" : "text-[22px]"} mb-2 font-bold leading-tight text-primary`}>
                                         <FormattedBibTeXText nodes={pub.titleNodes} fallback={pub.title} />
                                     </h3>
-                                    <p className={`${embedded ? "text-sm" : "text-base"} text-neutral-600 dark:text-neutral-400 mb-2`}>
+                                    <p className={`${embedded ? "text-base" : "text-lg"} mb-2 leading-7 text-neutral-700 dark:text-neutral-300`}>
                                         {pub.authors.map((author, idx) => (
                                             <span key={idx}>
-                                                <span className={`${author.isHighlighted ? 'font-semibold text-accent' : ''} ${author.isCoAuthor ? `underline underline-offset-4 ${author.isHighlighted ? 'decoration-accent' : 'decoration-neutral-400'}` : ''}`}>
+                                                <span className={`${author.isHighlighted ? 'font-semibold text-primary' : ''} ${author.isCoAuthor ? 'underline decoration-neutral-400 underline-offset-4' : ''}`}>
                                                     {author.name}
                                                 </span>
                                                 {author.isCorresponding && (
-                                                    <sup className={`ml-0 ${author.isHighlighted ? 'text-accent' : 'text-neutral-600 dark:text-neutral-400'}`}>†</sup>
+                                                    <sup className="ml-0 text-neutral-600 dark:text-neutral-400">†</sup>
                                                 )}
                                                 {idx < pub.authors.length - 1 && ', '}
                                             </span>
                                         ))}
                                     </p>
-                                    <p className="text-sm font-medium text-neutral-800 dark:text-neutral-600 mb-3">
+                                    <p className="mb-3 text-base font-bold text-neutral-700 dark:text-neutral-300">
                                         {pub.journal || pub.conference} {pub.year}
+                                        {pub.type === 'preprint' && <span className="ml-2 text-sm font-semibold text-accent">Preprint</span>}
                                     </p>
 
                                     {pub.description && (
-                                        <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-4 line-clamp-3">
+                                        <p className="mb-4 line-clamp-3 text-base leading-7 text-neutral-600 dark:text-neutral-400">
                                             {pub.description}
                                         </p>
                                     )}
 
                                     <div className="flex flex-wrap gap-2 mt-auto">
-                                        {pub.doi && (
+                                        {(pub.doi || pub.url) && (
                                             <a
-                                                href={`https://doi.org/${pub.doi}`}
+                                                href={pub.doi ? `https://doi.org/${pub.doi}` : pub.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
                                             >
-                                                DOI
+                                                {pub.doi ? 'DOI' : 'Read article'}
                                             </a>
                                         )}
                                         {pub.code && (

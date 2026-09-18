@@ -1,0 +1,28 @@
+type = "card"
+layout = "team"
+title = "Team"
+description = "Our team works across forest genetics, genomics, tree breeding, conservation, phenomics, remote sensing, and bioinformatics. Additional member details will be added after each member approves publication."
+
+[[items]]
+title = "Aziz Ebrahimi"
+subtitle = "Principal Investigator"
+category = "Principal Investigator"
+affiliation = "Warnell School of Forestry and Natural Resources, University of Georgia"
+content = "Assistant Professor of Forest Genetics, Genomics & Tree Breeding. His research connects field trials, genomics, phenomics, remote sensing, and bioinformatics to support tree improvement and climate-resilient forest restoration."
+tags = ["Forest Genetics", "Tree Breeding", "Conservation Genomics", "Remote Sensing", "Bioinformatics"]
+image = "/avatar.svg"
+
+[[items]]
+title = "Luhanhai Ying"
+subtitle = "Master’s Student"
+category = "Home Institution"
+affiliation = "University of Georgia"
+content = "The lab’s first master’s student at UGA’s Warnell School of Forestry and Natural Resources."
+image = "/team-placeholder.svg"
+
+[[items]]
+title = "Paul M Montello"
+subtitle = "Research Professional III"
+category = "Technical Staff"
+affiliation = "Warnell School of Forestry and Natural Resources, University of Georgia"
+image = "/team-placeholder.svg"

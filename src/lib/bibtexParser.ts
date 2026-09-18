@@ -73,7 +73,7 @@ export function parseBibTeX(bibtexContent: string, locale?: string): Publication
       year,
       month: monthMapping[tags.month?.toLowerCase()] ? String(month) : tags.month,
       type,
-      status: 'published',
+      status: type === 'preprint' ? 'preprint' : 'published',
       tags: keywords,
       keywords,
       researchArea: detectResearchArea(tags.title, keywords),

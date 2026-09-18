@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
+import Image from 'next/image';
+import Link from 'next/link';
 import { CardPageConfig } from '@/types/page';
 
 const markdownComponents = {
@@ -56,6 +58,17 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                         transition={{ duration: 0.4, delay: 0.1 * index }}
                         className={`bg-white dark:bg-neutral-900 ${embedded ? "p-4" : "p-6"} rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all duration-200 hover:scale-[1.01]`}
                     >
+                        {item.image && (
+                            <div className="relative w-full aspect-video mb-5 overflow-hidden rounded-lg bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700">
+                                <Image
+                                    src={item.image}
+                                    alt={`${item.title} image`}
+                                    fill
+                                    className="object-contain"
+                                    sizes="(max-width: 768px) 100vw, 768px"
+                                />
+                            </div>
+                        )}
                         <div className="flex justify-between items-start mb-2">
                             <h3 className={`${embedded ? "text-lg" : "text-xl"} font-semibold text-primary`}>{item.title}</h3>
                             {item.date && (
@@ -81,6 +94,17 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                                         {tag}
                                     </span>
                                 ))}
+                            </div>
+                        )}
+                        {item.link && (
+                            <div className="mt-5">
+                                <Link
+                                    href={item.link}
+                                    className="inline-flex items-center rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+                                >
+                                    View Project
+                                    <span aria-hidden="true" className="ml-2">→</span>
+                                </Link>
                             </div>
                         )}
                     </motion.div>

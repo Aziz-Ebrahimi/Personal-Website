@@ -1,0 +1,22 @@
+title = "Phenomics, Remote Sensing & Machine Learning for Forest Health"
+subtitle = "Advanced phenotyping and digital forestry"
+category = "Phenomics, Remote Sensing & Digital Forestry"
+image = "/research-ai.svg"
+summary = "This research combines UAV imagery, multispectral and hyperspectral sensing, spectral classification, and machine learning to phenotype forest trees and quantify disease and hybrid status."
+related_publications_category = "Phenomics/Remote Sensing"
+
+[[sections]]
+title = "Research Questions"
+content = "How can spectral and image-derived traits provide scalable measures of forest-tree health, disease response, and hybrid status? Which models generalize across field trials and environmental conditions?"
+
+[[sections]]
+title = "Approach"
+content = "UAV platforms, multispectral and hyperspectral sensors, field measurements, spectral classification, and machine-learning models are integrated into high-throughput phenotyping workflows. Sensor specifications, study sites, and datasets: **To be added**."
+
+[[sections]]
+title = "Impact"
+content = "The goal is to improve the speed and scale of forest-health assessment and connect phenomic measurements with genomic and breeding decisions. Verified performance results and operational applications: **To be added**."
+
+[[sections]]
+title = "Collaborators and Support"
+content = "Collaborators, partner organizations, funding sources, grant numbers, image credits, and approved acknowledgments: **To be added**."

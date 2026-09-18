@@ -168,11 +168,11 @@ export default function Navigation({
             className={cn(
               'transition-all duration-300 ease-out',
               scrolled
-                ? 'bg-background/80 backdrop-blur-xl border-b border-neutral-200/50 shadow-lg'
-                : 'bg-transparent'
+                ? 'bg-background/95 backdrop-blur-xl border-b border-neutral-200/80 shadow-[0_2px_12px_rgba(15,23,42,0.04)]'
+                : 'bg-background/90 backdrop-blur-xl border-b border-neutral-200/70'
             )}
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center h-16 lg:h-20">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -181,7 +181,7 @@ export default function Navigation({
                 >
                   <Link
                     href="/"
-                    className="text-xl lg:text-2xl font-serif font-semibold text-primary hover:text-accent transition-colors duration-200"
+                    className="text-xl lg:text-2xl font-bold tracking-tight text-primary hover:text-accent transition-colors duration-200"
                   >
                     {effectiveSiteTitle}
                   </Link>
@@ -229,7 +229,7 @@ export default function Navigation({
                             onClick={() => enableOnePageMode && setActiveHash(`#${item.target}`)}
                             onMouseEnter={() => setHoveredHref(href)}
                             className={cn(
-                              'relative px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-150',
+                              'relative px-3 py-2 text-base font-medium rounded-lg transition-colors duration-150',
                               isActive
                                 ? 'text-primary'
                                 : hoveredHref === href

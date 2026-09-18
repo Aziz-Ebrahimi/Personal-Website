@@ -1,0 +1,35 @@
+type = "card"
+layout = "research"
+title = "Research"
+description = "Our research integrates **forest genetics and genomics, tree breeding, conservation genomics, phenomics, remote sensing, and bioinformatics** to improve the conservation, restoration, productivity, and resilience of forest trees."
+
+[[items]]
+title = "Conservation Genomics of Butternut (Juglans cinerea)"
+category = "Conservation Genomics & Forest Restoration"
+content = "Integrates population and landscape genetics, hybrid identification, disease-resistance assessment, field trials, and advanced phenotyping to support conservation and restoration of threatened butternut."
+tags = ["Conservation Genomics", "Forest Restoration", "Butternut"]
+image = "/research-genetics.svg"
+link = "/research/conservation-genomics"
+
+[[items]]
+title = "Genomics and Climate Adaptation of Hardwood Trees"
+category = "Forest Genetics, Genomics & Tree Breeding"
+content = "Uses morpho-physiology, population genomics, comparative genomics, and field data to understand adaptation of hardwood species to abiotic stress and climate variation."
+tags = ["Forest Genetics/Genomics", "Tree Breeding", "Climate Adaptation"]
+link = "/research/forest-genetics-genomics"
+
+[[items]]
+title = "Phenomics, Remote Sensing & Machine Learning for Forest Health"
+category = "Phenomics, Remote Sensing & Digital Forestry"
+content = "Combines UAV imagery, multispectral and hyperspectral sensing, spectral classification, and machine learning to phenotype forest trees and quantify disease and hybrid status."
+tags = ["Phenomics/Remote Sensing", "Digital Forestry", "Machine Learning"]
+image = "/research-ai.svg"
+link = "/research/phenomics-remote-sensing"
+
+[[items]]
+title = "Comparative and Phylogenomics of Juglandaceae"
+category = "Bioinformatics & Comparative Genomics"
+content = "Applies nuclear and plastid genome analyses, phylogenomics, comparative genomics, and pangenome approaches to investigate evolutionary relationships, genome diversity, and adaptation."
+tags = ["Bioinformatics/Machine Learning", "Comparative Genomics", "Phylogenomics"]
+image = "/research-ai.svg"
+link = "/research/bioinformatics-machine-learning"
