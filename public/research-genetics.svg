@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
-  <title id="t">Plant genetics project placeholder</title><desc id="d">Decorative leaves and a DNA helix.</desc>
+  <title id="t">Forest genetics illustration</title><desc id="d">Decorative leaves and a DNA helix.</desc>
   <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#edf5e7"/><stop offset="1" stop-color="#d3e8bf"/></linearGradient></defs>
   <rect width="1200" height="675" rx="28" fill="url(#g)"/>
   <g fill="none" stroke="#4d7c3d" stroke-width="14" stroke-linecap="round"><path d="M370 115c220 130 220 315 0 445"/><path d="M595 115c-220 130-220 315 0 445"/><path d="M405 155h155M355 230h195M345 325h210M355 420h195M405 520h155"/></g>
   <g fill="#6fa95b"><path d="M770 420c-70-155 15-270 220-285 15 190-45 300-220 285Z"/><path d="M780 420c110-130 170-190 210-285" fill="none" stroke="#315f35" stroke-width="10"/></g>
-  <text x="60" y="620" fill="#315f35" font-family="Arial,sans-serif" font-size="34" font-weight="700">PROJECT IMAGE PLACEHOLDER · PLANT GENETICS</text>
+  <text x="60" y="620" fill="#315f35" font-family="Arial,sans-serif" font-size="34" font-weight="700">FOREST GENETICS &amp; GENOMICS</text>
 </svg>

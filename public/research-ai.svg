@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
-  <title id="t">AI for crop science project placeholder</title><desc id="d">A stylized crop field connected to a neural network.</desc>
+  <title id="t">Computational forest science illustration</title><desc id="d">A neural network with a leaf representing computational forest science.</desc>
   <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eaf2f3"/><stop offset="1" stop-color="#c8dcdd"/></linearGradient></defs>
   <rect width="1200" height="675" rx="28" fill="url(#g)"/>
   <g stroke="#365d64" stroke-width="7" opacity=".7"><path d="M235 170 470 270 700 150 940 290M235 170 470 430 700 150 940 440M235 500 470 270 700 500 940 290M235 500 470 430 700 500 940 440"/></g>
   <g fill="#fff" stroke="#365d64" stroke-width="9"><circle cx="235" cy="170" r="42"/><circle cx="235" cy="500" r="42"/><circle cx="470" cy="270" r="42"/><circle cx="470" cy="430" r="42"/><circle cx="700" cy="150" r="42"/><circle cx="700" cy="500" r="42"/><circle cx="940" cy="290" r="42"/><circle cx="940" cy="440" r="42"/></g>
   <g fill="#6f9b4b"><path d="M910 520c-55-105 8-180 132-190 8 125-32 195-132 190Z"/><path d="M918 518c60-82 95-130 124-188" fill="none" stroke="#365d42" stroke-width="8"/></g>
-  <text x="60" y="620" fill="#365d64" font-family="Arial,sans-serif" font-size="34" font-weight="700">PROJECT IMAGE PLACEHOLDER · AI FOR CROP SCIENCE</text>
+  <text x="60" y="620" fill="#365d64" font-family="Arial,sans-serif" font-size="34" font-weight="700">COMPUTATIONAL FOREST SCIENCE</text>
 </svg>

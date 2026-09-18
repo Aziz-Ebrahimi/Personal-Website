@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
-  <title id="title">FirstName LastName monogram</title>
-  <desc id="desc">A decorative placeholder portrait with the initials FL.</desc>
+  <title id="title">Aziz Ebrahimi monogram</title>
+  <desc id="desc">A decorative monogram with the initials AE.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#19324a"/><stop offset="1" stop-color="#496d73"/></linearGradient>
     <radialGradient id="glow" cx=".75" cy=".18" r=".75"><stop offset="0" stop-color="#d7b46a" stop-opacity=".7"/><stop offset="1" stop-color="#d7b46a" stop-opacity="0"/></radialGradient>
@@ -8,6 +8,6 @@
   <rect width="640" height="640" rx="48" fill="url(#bg)"/><rect width="640" height="640" rx="48" fill="url(#glow)"/>
   <circle cx="320" cy="285" r="196" fill="none" stroke="#f4efe4" stroke-opacity=".14" stroke-width="2"/>
   <path d="M110 520C185 438 256 407 320 407s135 31 210 113" fill="none" stroke="#f4efe4" stroke-opacity=".12" stroke-width="44" stroke-linecap="round"/>
-  <text x="320" y="360" text-anchor="middle" fill="#f8f4e9" font-family="Georgia,serif" font-size="210" letter-spacing="-18">FL</text>
+  <text x="320" y="360" text-anchor="middle" fill="#f8f4e9" font-family="Georgia,serif" font-size="210" letter-spacing="-18">AE</text>
   <text x="320" y="555" text-anchor="middle" fill="#f8f4e9" fill-opacity=".65" font-family="Arial,sans-serif" font-size="18" letter-spacing="6">ACADEMIC PROFILE</text>
 </svg>
