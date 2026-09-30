@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
+import { assetPath } from '@/lib/assetPath';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AcademicCapIcon, EnvelopeIcon, LinkIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import type { SiteConfig } from '@/lib/config';
@@ -32,11 +34,16 @@ export default function Profile({ author, social, researchInterests }: ProfilePr
             className="text-base lg:sticky lg:top-28"
         >
             <div
-                className="mx-auto mb-6 flex aspect-[4/5] w-full max-w-[220px] items-center justify-center border-2 border-black bg-white text-6xl font-semibold text-primary dark:border-white dark:bg-neutral-900"
-                role="img"
-                aria-label={`${author.name} monogram`}
+                className="relative mx-auto mb-6 aspect-[4/5] w-full max-w-[220px] overflow-hidden border-2 border-black bg-white dark:border-white dark:bg-neutral-900"
             >
-                {author.name.split(/\s+/).map(part => part[0]).join('')}
+                <Image
+                    src={assetPath(author.avatar)}
+                    alt={`${author.name} headshot`}
+                    fill
+                    priority
+                    sizes="220px"
+                    className="object-cover object-[70%_center]"
+                />
             </div>
 
             <div className="mb-6 text-center lg:text-left">

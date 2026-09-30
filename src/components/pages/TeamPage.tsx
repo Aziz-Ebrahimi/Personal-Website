@@ -75,7 +75,7 @@ export default function TeamPage({ config }: { config: CardPageConfig }) {
                     <div className="flex flex-col items-center gap-5 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm sm:flex-row sm:items-start dark:border-neutral-800 dark:bg-neutral-900">
                         <div className="relative h-32 w-32 flex-none overflow-hidden rounded-full bg-neutral-100 ring-1 ring-neutral-200 dark:bg-neutral-800 dark:ring-neutral-700">
                             {principalInvestigator.image && (
-                                <Image src={assetPath(principalInvestigator.image)} alt={`${principalInvestigator.title} headshot`} fill className="object-cover" sizes="128px" />
+                                <Image src={assetPath(principalInvestigator.image)} alt={`${principalInvestigator.title} headshot`} fill className="object-cover object-[70%_center]" sizes="128px" />
                             )}
                         </div>
                         <div className="min-w-0 text-center sm:text-left">
