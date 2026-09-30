@@ -42,7 +42,7 @@ export default function Profile({ author, social, researchInterests }: ProfilePr
                     fill
                     priority
                     sizes="220px"
-                    className="object-cover object-[70%_center]"
+                    className="object-cover object-[80%_center]"
                 />
             </div>
 
