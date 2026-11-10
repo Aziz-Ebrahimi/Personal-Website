@@ -5,6 +5,8 @@ import TextPage from '@/components/pages/TextPage';
 import CardPage from '@/components/pages/CardPage';
 import TeamPage from '@/components/pages/TeamPage';
 import ResearchOverviewPage from '@/components/pages/ResearchOverviewPage';
+import type { ResearchProjectConfig } from '@/types/researchProject';
+import type { SiteConfig } from '@/lib/config';
 import { Publication } from '@/types/publication';
 import {
   PublicationPageConfig,
@@ -14,9 +16,9 @@ import {
 import { useLocaleStore } from '@/lib/stores/localeStore';
 
 export type DynamicPageLocaleData =
-  | { type: 'publication'; config: PublicationPageConfig; publications: Publication[] }
+  | { type: 'publication'; config: PublicationPageConfig; publications: Publication[]; profiles?: SiteConfig['social'] }
   | { type: 'text'; config: TextPageConfig; content: string }
-  | { type: 'card'; config: CardPageConfig };
+  | { type: 'card'; config: CardPageConfig; projects?: Record<string, ResearchProjectConfig> };
 
 interface DynamicPageClientProps {
   dataByLocale: Record<string, DynamicPageLocaleData>;
@@ -33,9 +35,9 @@ export default function DynamicPageClient({ dataByLocale, defaultLocale }: Dynam
   }
 
   return (
-    <div className={`${pageData.type === 'card' && (pageData.config.layout === 'team' || pageData.config.layout === 'research') ? 'max-w-6xl' : 'max-w-4xl'} mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16`}>
+    <div className={`${pageData.type === 'publication' || pageData.type === 'card' && (pageData.config.layout === 'team' || pageData.config.layout === 'research') ? 'max-w-6xl' : 'max-w-4xl'} mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16`}>
       {pageData.type === 'publication' && (
-        <PublicationsList config={pageData.config} publications={pageData.publications} />
+        <PublicationsList config={pageData.config} publications={pageData.publications} profiles={pageData.profiles} />
       )}
       {pageData.type === 'text' && (
         <TextPage config={pageData.config} content={pageData.content} />
@@ -44,7 +46,7 @@ export default function DynamicPageClient({ dataByLocale, defaultLocale }: Dynam
         <TeamPage config={pageData.config} />
       )}
       {pageData.type === 'card' && pageData.config.layout === 'research' && (
-        <ResearchOverviewPage config={pageData.config} />
+        <ResearchOverviewPage config={pageData.config} projects={pageData.projects} />
       )}
       {pageData.type === 'card' && pageData.config.layout !== 'team' && pageData.config.layout !== 'research' && (
         <CardPage config={pageData.config} />

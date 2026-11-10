@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:forest": "node scripts/generate-forest-survey.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
@@ -21,6 +22,7 @@
     "react-dom": "^19.0.0",
     "react-markdown": "^10.1.0",
     "smol-toml": "^1.5.2",
+    "three": "^0.187.0",
     "zustand": "^5.0.5"
   },
   "devDependencies": {
@@ -29,6 +31,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.187.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
     "lightningcss": "^1",

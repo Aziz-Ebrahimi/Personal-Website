@@ -10,6 +10,7 @@ import {
   CardPageConfig,
 } from '@/types/page';
 
+import { ResearchProjectConfig } from '@/types/researchProject';
 import { Metadata } from 'next';
 import { getRuntimeI18nConfig } from '@/lib/i18n/config';
 
@@ -27,6 +28,7 @@ function loadDynamicPageData(slug: string, locale?: string): DynamicPageLocaleDa
       type: 'publication',
       config: pubConfig,
       publications: parseBibTeX(bibtex, locale),
+      profiles: getConfig(locale).social,
     };
   }
 
@@ -44,6 +46,12 @@ function loadDynamicPageData(slug: string, locale?: string): DynamicPageLocaleDa
     return {
       type: 'card',
       config: pageConfig as CardPageConfig,
+      projects: (pageConfig as CardPageConfig).layout === 'research'
+        ? Object.fromEntries((pageConfig as CardPageConfig).items.flatMap(item => {
+            const slug = item.link?.split('/').filter(Boolean).pop();
+            const project = slug ? getPageConfig<ResearchProjectConfig>(`research-projects/${slug}`, locale) : null;
+            return project && item.link ? [[item.link, project]] : [];
+          })) : undefined,
     };
   }
 

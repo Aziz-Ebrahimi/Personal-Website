@@ -50,7 +50,7 @@ switcher = false
 en = "English"
 
 [[navigation]]
-title = "About"
+title = "Home"
 type = "page"
 target = "about"
 href = "/"

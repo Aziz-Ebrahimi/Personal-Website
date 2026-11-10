@@ -1,0 +1,12 @@
+{
+  "seed": 41729,
+  "width": 150,
+  "depth": 200,
+  "duration": 90,
+  "previewDuration": 15,
+  "altitude": 29,
+  "laneSpacing": 12,
+  "surveyBounds": { "minX": -48, "maxX": 48, "minZ": -52, "maxZ": 64 },
+  "footprintWidth": 14,
+  "footprintDepth": 18
+}

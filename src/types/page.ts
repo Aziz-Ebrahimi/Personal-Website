@@ -15,6 +15,7 @@ export interface TextPageConfig extends BasePageConfig {
 }
 
 export interface CardItem {
+    featured?: boolean;
     title: string;
     subtitle?: string;
     date?: string;

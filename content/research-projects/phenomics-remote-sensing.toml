@@ -1,7 +1,6 @@
-title = "Phenomics, Remote Sensing & Machine Learning for Forest Health"
+title = "Remote Sensing"
 subtitle = "Advanced phenotyping and digital forestry"
 category = "Phenomics, Remote Sensing & Digital Forestry"
-image = "/research-ai.svg"
 summary = "This research combines UAV imagery, multispectral and hyperspectral sensing, spectral classification, and machine learning to phenotype forest trees and quantify disease and hybrid status."
 related_publications_category = "Phenomics/Remote Sensing"
 
@@ -20,3 +19,12 @@ content = "The goal is to improve the speed and scale of forest-health assessmen
 [[sections]]
 title = "Collaborators and Support"
 content = "Collaborators, partner organizations, funding sources, grant numbers, image credits, and approved acknowledgments: **To be added**."
+
+[[sections]]
+title = "From flight to forest insight"
+content = "RGB imagery records canopy appearance, multispectral and hyperspectral imagery describe spectral variation, and LiDAR captures three-dimensional structure. The interactive scene above illustrates survey flight and coverage; it does not display measured sensor data. Specific instruments and study details: **To be added**."
+
+[flight]
+model = "/models/forest-survey.glb"
+poster = "/models/forest-survey-poster.svg"
+viewer_url = "/research/phenomics-remote-sensing/flight/"
