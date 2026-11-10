@@ -26,3 +26,9 @@ subtitle = "Research Professional III"
 category = "Technical Staff"
 affiliation = "Warnell School of Forestry and Natural Resources, University of Georgia"
 image = "/team-placeholder.svg"
+
+[[items]]
+title = "Erin Gallatin"
+subtitle = "Undergraduate Student"
+content = "Additional information to be added."
+image = "/team-placeholder.svg"
