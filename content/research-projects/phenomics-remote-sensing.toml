@@ -1,16 +1,17 @@
-title = "Remote Sensing"
-subtitle = "Advanced phenotyping and digital forestry"
-category = "Phenomics, Remote Sensing & Digital Forestry"
-summary = "This research combines UAV imagery, multispectral and hyperspectral sensing, spectral classification, and machine learning to phenotype forest trees and quantify disease and hybrid status."
-related_publications_category = "Phenomics/Remote Sensing"
+title = "Forest Health and Production"
+visualization = "forest-health"
+subtitle = "From forest observations to prediction and genetic improvement"
+category = "Forest Health, Productivity & Genetic Improvement"
+summary = "This research connects remote sensing, artificial intelligence, and genomics to understand forest health, growth, and productivity. Extracted features support machine learning and phenotyping, while deep learning can learn directly from imagery. Independently collected genomic markers connect measured or estimated phenotypes with genetic association studies and genomic selection."
+related_publications_categories = ["Phenomics/Remote Sensing", "Forest Genetics/Genomics", "Bioinformatics/Machine Learning"]
 
 [[sections]]
 title = "Research Questions"
-content = "How can spectral and image-derived traits provide scalable measures of forest-tree health, disease response, and hybrid status? Which models generalize across field trials and environmental conditions?"
+content = "How can sensing and field observations describe forest health, growth, and productivity? Which features and learned image representations support useful predictions across sites and environmental conditions? How can genetic associations and genomic prediction support evaluation of breeding material?"
 
 [[sections]]
 title = "Approach"
-content = "UAV platforms, multispectral and hyperspectral sensors, field measurements, spectral classification, and machine-learning models are integrated into high-throughput phenotyping workflows. Sensor specifications, study sites, and datasets: **To be added**."
+content = "RGB, multispectral, hyperspectral, and LiDAR observations complement field measurements. Derived features support machine learning; deep learning can learn representations directly from imagery. Measured or estimated phenotypes and independently collected genomic markers support GWAS and genomic selection. Held-out evaluation, interpretation, and scenario modeling connect predictions with biological evidence. Sensor specifications, study sites, datasets, model architectures, and evaluation protocols: **To be added**."
 
 [[sections]]
 title = "Impact"
@@ -28,3 +29,53 @@ content = "RGB imagery records canopy appearance, multispectral and hyperspectra
 model = "/models/forest-survey.glb"
 poster = "/models/forest-survey-poster.svg"
 viewer_url = "/research/phenomics-remote-sensing/flight/"
+
+[workflow]
+title = "From observation to forest insight"
+introduction = "Explore two analytical paths: derive features from sensing data, or learn directly from imagery. Genetic analyses also require independently collected genomic markers."
+feature_path_label = "Feature-based analysis"
+image_path_label = "Direct imagery analysis"
+genomic_input_label = "Independent genomic markers"
+genomic_input_description = "Collected separately from sensing data · required for GWAS and genomic selection"
+
+[[workflow.steps]]
+id = "sensing"
+label = "Remote sensing"
+description = "RGB captures canopy appearance; multispectral and hyperspectral imagery describe spectral variation; LiDAR describes three-dimensional structure. These observations complement field measurements."
+application = "Observe forest canopies across space and time."
+
+[[workflow.steps]]
+id = "features"
+label = "Phenotypes"
+description = "RGB provides vegetation indices such as VARI and ExG; multispectral data supports NDVI, RTVI, and NDRE. Hyperspectral phenotyping can include 200+ bands and 200+ vegetation indices, depending on the sensor and processing workflow. LiDAR describes tree height, canopy density, and crown dimensions. These are illustrative capabilities, not confirmed dataset specifications."
+application = "Build interpretable descriptions of tree condition and growth."
+
+[[workflow.steps]]
+id = "ml"
+label = "Machine learning"
+description = "Models connect extracted features with observed outcomes. Held-out data evaluates prediction errors and generalization across trees, sites, and conditions."
+application = "Predict forest traits and investigate relationships among observations."
+
+[[workflow.steps]]
+id = "dl"
+label = "Deep learning"
+description = "Individual-tree image patches include a crown and surrounding buffer. Layered models learn representations directly from these patches, bypassing manual feature extraction. Training labels and independent evaluation remain necessary to assess trait predictions."
+application = "Learn useful patterns from canopy images and sensing data."
+
+[[workflow.steps]]
+id = "gwas"
+label = "GWAS"
+description = "Genome-wide association studies combine measured or estimated phenotypes with independently collected genomic markers to investigate trait associations. Population structure and relatedness must be considered."
+application = "Investigate genetic variation associated with forest traits."
+
+[[workflow.steps]]
+id = "selection"
+label = "Genomic selection"
+description = "Training phenotypes and genome-wide markers inform a model that is evaluated before application. Candidate genotypes then support prediction of breeding values alongside field evidence."
+application = "Support evaluation and selection of breeding material."
+
+[[workflow.steps]]
+id = "applications"
+label = "Forest applications"
+description = "Condition assessment, growth and productivity prediction, and breeding selection connect these methods to forest research. Predictive evaluation and scenario modeling help interpret outcomes under different conditions."
+application = "Inform forest monitoring, research, and breeding decisions. Verified operational results: To be added."

@@ -101,7 +101,12 @@ export default function FlightViewer({ assets, preview }: { assets: FlightAssets
             const progress = state.time/config.duration;
             const position = path.getPoint(progress);
             const tangent = path.getTangent(Math.min(progress,.99999));
-            if(drone) { drone.position.copy(position);drone.rotation.y=Math.atan2(tangent.x,tangent.z); }
+            if (drone) {
+                drone.position.copy(position);
+                drone.rotation.y = Math.atan2(tangent.x, tangent.z);
+                // Exaggerate the aircraft for visibility over the forest, especially in the thumbnail.
+                drone.scale.setScalar(state.camera === 'follow' ? 2.5 : 5);
+            }
             for(const rotor of rotors) rotor.rotation.y=state.time*45;
             footprint.position.set(position.x,.8,position.z);
             const beamPoints = beamGeo.attributes.position;
@@ -127,7 +132,24 @@ export default function FlightViewer({ assets, preview }: { assets: FlightAssets
             }
             const desiredZoom=(preview?1.18:1.08)*Math.min(1,camera.aspect/(state.camera==='follow'?1:1.45));
             if(camera.zoom!==desiredZoom){camera.zoom=desiredZoom;camera.updateProjectionMatrix();}
-            if(droneLabel.current) {const projected=position.clone().project(camera);const x=(projected.x+1)*container.clientWidth/2;const y=(1-projected.y)*container.clientHeight/2;droneLabel.current.style.transform=`translate(${x}px, ${y-20}px) translate(-50%,-100%)`;droneLabel.current.style.visibility=loaded&&projected.z<1&&Math.abs(projected.x)<1&&Math.abs(projected.y)<1?'visible':'hidden';}
+            if (droneLabel.current && drone) {
+                camera.updateMatrixWorld();
+                drone.updateMatrixWorld();
+                const center = position.clone().project(camera);
+                const corners = [-4, 4].flatMap(x => [-1, 1].flatMap(y => [-4, 4].map(z =>
+                    new THREE.Vector3(x, y, z).applyMatrix4(drone!.matrixWorld).project(camera))));
+                const xs = corners.map(p => (p.x + 1) * container.clientWidth / 2);
+                const ys = corners.map(p => (1 - p.y) * container.clientHeight / 2);
+                const left = Math.min(...xs), right = Math.max(...xs);
+                const top = Math.min(...ys), bottom = Math.max(...ys);
+                const width = Math.max(48, right - left + 12);
+                const height = Math.max(36, bottom - top + 12);
+                const marker = droneLabel.current;
+                marker.style.width = `${width}px`;
+                marker.style.height = `${height}px`;
+                marker.style.transform = `translate(${(left + right - width) / 2}px, ${(top + bottom - height) / 2}px)`;
+                marker.style.visibility = loaded && center.z > -1 && center.z < 1 && Math.abs(center.x) < 1 && Math.abs(center.y) < 1 ? 'visible' : 'hidden';
+            }
             activeRenderer.render(scene,camera);
             if(visible&&!document.hidden) frame=requestAnimationFrame(update);
         };
@@ -150,7 +172,7 @@ export default function FlightViewer({ assets, preview }: { assets: FlightAssets
     const buttonClass = 'rounded-md border border-neutral-200 bg-background px-3 py-2 text-xs font-bold text-primary disabled:opacity-50';
     return <>
         <div ref={host} className={`absolute inset-0 ${error ? 'hidden' : ''}`} />
-        {!error && <div ref={droneLabel} aria-hidden="true" className="pointer-events-none absolute left-0 top-0 rounded border border-[#176858]/30 bg-white/90 px-2 py-1 text-[10px] font-bold tracking-wider text-[#176858]">● UAV</div>}
+        {!error && <div ref={droneLabel} aria-hidden="true" className="pointer-events-none invisible absolute left-0 top-0 rounded-sm border-[3px] border-[#ffe600] bg-[#ffe600]/5 shadow-[0_0_0_1px_rgba(0,0,0,0.45)]"><span className="absolute -top-5 left-[-3px] rounded-t bg-[#ffe600] px-1.5 py-0.5 text-[10px] font-bold tracking-wider text-black">UAV</span></div>}
         {error ? <p role="status" className="absolute bottom-4 left-4 right-4 rounded-lg bg-background/95 p-4 text-sm text-primary">{error}</p> : <>
             {!ready && <p role="status" className="absolute left-4 top-4 rounded bg-background/95 px-3 py-2 text-sm">Loading forest model…</p>}
             <div className="absolute left-3 top-3 rounded-lg bg-background/95 px-3 py-2 text-xs text-primary shadow-sm"><span className="font-bold">Forest survey</span><span className="ml-3">{coverage}% surveyed</span></div>

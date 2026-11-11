@@ -6,9 +6,11 @@ import { assetPath } from '@/lib/assetPath';
 import type { ResearchProjectConfig } from '@/types/researchProject';
 
 export default function ResearchProjectDetails({ project, embedded = false }: { project: ResearchProjectConfig; embedded?: boolean }) {
- const publicationUrl = `/publications?category=${encodeURIComponent(project.related_publications_category)}`;
+ const categories = project.related_publications_categories ?? (project.related_publications_category ? [project.related_publications_category] : []);
  const Title = embedded ? 'h2' : 'h1';
  return <div>
+            {project.workflow && !embedded && <h1 className="sr-only">{project.title}</h1>}
+            {!project.workflow && <>
             <header className="mb-12 max-w-5xl">
                 <div className="mb-4 text-sm font-bold uppercase tracking-[0.16em] text-accent">
                     {project.category}
@@ -41,15 +43,17 @@ export default function ResearchProjectDetails({ project, embedded = false }: { 
                 ))}
             </div>
 
-            <aside className="mt-14 flex max-w-4xl flex-col gap-4 border-t border-neutral-200 pt-8 sm:flex-row sm:items-center sm:justify-between dark:border-neutral-800">
+            </>}
+
+            <aside className={`${project.workflow ? 'mt-0' : 'mt-14'} flex max-w-4xl flex-col gap-4 border-t border-neutral-200 pt-8 sm:flex-row sm:items-center sm:justify-between dark:border-neutral-800`}>
                 <div>
                     <h2 className="text-xl font-bold text-primary">Related research outputs</h2>
                     <p className="mt-1 text-base text-neutral-500">See publications connected to this project area.</p>
                 </div>
-                <Link href={publicationUrl} className="inline-flex flex-none items-center text-base font-bold text-accent hover:underline">
-                    Related Publications
+                <div className="flex flex-wrap gap-3">{categories.map(category => <Link key={category} href={`/publications?category=${encodeURIComponent(category)}`} className="inline-flex flex-none items-center text-base font-bold text-accent hover:underline">
+                    {categories.length > 1 ? category : 'Related Publications'}
                     <span aria-hidden="true" className="ml-2">→</span>
-                </Link>
+                </Link>)}</div>
             </aside>
 </div>;
 }

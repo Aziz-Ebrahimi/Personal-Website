@@ -19,10 +19,10 @@ tags = ["Forest Genetics/Genomics", "Tree Breeding", "Climate Adaptation"]
 link = "/research/forest-genetics-genomics"
 
 [[items]]
-title = "Remote Sensing"
+title = "Forest Health and Production"
 featured = true
-category = "Phenomics, Remote Sensing & Digital Forestry"
-content = "Combines UAV imagery, multispectral and hyperspectral sensing, spectral classification, and machine learning to phenotype forest trees and quantify disease and hybrid status."
+category = "Forest Health, Productivity & Genetic Improvement"
+content = "Connects remote sensing, feature-based machine learning, image-based deep learning, and genomic analysis to study forest health, growth, and breeding decisions."
 tags = ["Phenomics/Remote Sensing", "Digital Forestry", "Machine Learning"]
 image = "/research-ai.svg"
 link = "/research/phenomics-remote-sensing"

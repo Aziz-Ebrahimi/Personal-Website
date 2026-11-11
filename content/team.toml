@@ -18,14 +18,14 @@ subtitle = "Master’s Student"
 category = "Home Institution"
 affiliation = "University of Georgia"
 content = "The lab’s first master’s student at UGA’s Warnell School of Forestry and Natural Resources."
-image = "/team-placeholder.svg"
+image = "/team/luhanhai-ying.png"
 
 [[items]]
 title = "Paul M Montello"
 subtitle = "Research Professional III"
 category = "Technical Staff"
 affiliation = "Warnell School of Forestry and Natural Resources, University of Georgia"
-image = "/team-placeholder.svg"
+image = "/team/paul-montello.jpg"
 
 [[items]]
 title = "Erin Gallatin"

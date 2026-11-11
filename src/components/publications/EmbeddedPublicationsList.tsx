@@ -326,8 +326,9 @@ export default function EmbeddedPublicationsList({ config, publications, embedde
                                             >
                                                 <div className="bg-neutral-50 dark:bg-neutral-800 rounded-lg p-4 border border-neutral-200 dark:border-neutral-700">
                                                     <p className="text-sm text-neutral-600 dark:text-neutral-500 leading-relaxed">
-                                                        {pub.abstract}
+                                                        <FormattedBibTeXText nodes={pub.abstractNodes} fallback={pub.abstract} />
                                                     </p>
+                                                    {pub.abstractLicense && <a href={pub.abstractLicense} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-xs text-accent underline">Abstract license ↗</a>}
                                                 </div>
                                             </motion.div>
                                         ) : null}

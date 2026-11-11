@@ -264,3 +264,17 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Reveal the illustrative spectrum from short to long wavelengths, then reset. */
+@keyframes spectral-sweep {
+  0% { clip-path: inset(0 100% 0 0); }
+  82%, 94% { clip-path: inset(0 0 0 0); }
+  95%, 100% { clip-path: inset(0 100% 0 0); }
+}
+.spectral-sweep {
+  transform-box: fill-box;
+  animation: spectral-sweep 7s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .spectral-sweep { animation: none !important; clip-path: none; }
+}
