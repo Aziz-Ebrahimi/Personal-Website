@@ -29,6 +29,6 @@ export interface CardItem {
 
 export interface CardPageConfig extends BasePageConfig {
     type: 'card';
-    layout?: 'cards' | 'team' | 'research';
+    layout?: 'cards' | 'team' | 'research' | 'teaching';
     items: CardItem[];
 }

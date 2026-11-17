@@ -1,10 +1,11 @@
 type = "card"
+layout = "teaching"
 title = "Teaching"
-description = "Current and upcoming courses."
+description = "From genes to healthier forests: practical learning for the next generation of forestry professionals."
 
 [[items]]
-title = "Forest Genetics; Tree Improvement and Biotechnology"
-subtitle = "Instructor"
+title = "Introduction to Forest Genetics"
+subtitle = "FORS 5950 / FORS 8950 — Special Topics in Forestry and Natural Resources"
 date = "Spring 2027"
-content = "Course number, student level, description, syllabus, office hours, and public course link: To be added after the University of Georgia course is finalized."
-tags = ["Course details to be added"]
+content = "Explore how genetic and genomic tools help us grow better trees, conserve diversity, and restore healthier forests—through real forestry problems and hands-on thinking."
+tags = ["3 credits", "Undergraduate & graduate", "Application-focused"]

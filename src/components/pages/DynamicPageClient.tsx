@@ -3,6 +3,7 @@
 import PublicationsList from '@/components/publications/PublicationsList';
 import TextPage from '@/components/pages/TextPage';
 import CardPage from '@/components/pages/CardPage';
+import TeachingPage from '@/components/pages/TeachingPage';
 import TeamPage from '@/components/pages/TeamPage';
 import ResearchOverviewPage from '@/components/pages/ResearchOverviewPage';
 import type { ResearchProjectConfig } from '@/types/researchProject';
@@ -48,7 +49,10 @@ export default function DynamicPageClient({ dataByLocale, defaultLocale }: Dynam
       {pageData.type === 'card' && pageData.config.layout === 'research' && (
         <ResearchOverviewPage config={pageData.config} projects={pageData.projects} />
       )}
-      {pageData.type === 'card' && pageData.config.layout !== 'team' && pageData.config.layout !== 'research' && (
+      {pageData.type === 'card' && pageData.config.layout === 'teaching' && (
+        <TeachingPage config={pageData.config} />
+      )}
+      {pageData.type === 'card' && pageData.config.layout !== 'teaching' && pageData.config.layout !== 'team' && pageData.config.layout !== 'research' && (
         <CardPage config={pageData.config} />
       )}
     </div>
