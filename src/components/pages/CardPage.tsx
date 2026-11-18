@@ -39,10 +39,10 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
         >
-            <div className={embedded ? "mb-4" : "mb-8"}>
-                <h1 className={`${embedded ? "text-2xl" : "text-4xl"} font-serif font-bold text-primary mb-4`}>{config.title}</h1>
+            <div className={embedded ? "mb-4" : "mb-5"}>
+                <h1 className={`${embedded ? "text-2xl" : "text-3xl"} font-serif font-bold text-primary mb-4`}>{config.title}</h1>
                 {config.description && (
-                    <div className={`${embedded ? "text-base" : "text-lg"} text-neutral-600 dark:text-neutral-500 max-w-2xl leading-relaxed`}>
+                    <div className={`${embedded ? "text-base" : "text-lg"} text-neutral-600 dark:text-neutral-500 leading-relaxed`}>
                         <ReactMarkdown components={markdownComponents}>
                             {config.description}
                         </ReactMarkdown>
@@ -50,14 +50,14 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                 )}
             </div>
 
-            <div className={`grid ${embedded ? "gap-4" : "gap-6"}`}>
+            <div className={`grid ${embedded ? "gap-4" : "gap-4"}`}>
                 {config.items.map((item, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 * index }}
-                        className={`bg-white dark:bg-neutral-900 ${embedded ? "p-4" : "p-6"} rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all duration-200 hover:scale-[1.01]`}
+                        className={`bg-white dark:bg-neutral-900 ${embedded ? "p-4" : "p-5"} rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all duration-200 hover:scale-[1.01]`}
                     >
                         {item.image && (
                             <div className="relative w-full aspect-video mb-5 overflow-hidden rounded-lg bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700">

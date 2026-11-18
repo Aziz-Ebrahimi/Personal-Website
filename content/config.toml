@@ -90,9 +90,3 @@ title = "Services"
 type = "page"
 target = "services"
 href = "/services"
-
-[[navigation]]
-title = "CV"
-type = "page"
-target = "cv"
-href = "/cv"

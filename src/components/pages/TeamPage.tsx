@@ -36,7 +36,7 @@ function MemberCard({ member, index }: { member: CardItem; index: number }) {
                         alt={`${member.title} headshot`}
                         fill
                         className="object-cover"
-                        sizes="96px"
+                        sizes="128px"
                     />
                 )}
             </div>
@@ -60,17 +60,17 @@ export default function TeamPage({ config }: { config: CardPageConfig }) {
 
     return (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-            <div className="mb-8">
-                <h1 className="mb-4 text-4xl font-bold font-serif text-primary">{config.title}</h1>
+            <div className="mb-5">
+                <h1 className="mb-4 text-3xl font-bold font-serif text-primary">{config.title}</h1>
                 {config.description && (
-                    <div className="max-w-3xl text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
+                    <div className="text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
                         <ReactMarkdown>{config.description}</ReactMarkdown>
                     </div>
                 )}
             </div>
 
             {principalInvestigator && (
-                <section className="mb-10" aria-labelledby="pi-heading">
+                <section className="mb-7" aria-labelledby="pi-heading">
                     <h2 id="pi-heading" className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-neutral-500">Principal Investigator</h2>
                     <div className="flex flex-col items-center gap-5 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm sm:flex-row sm:items-start dark:border-neutral-800 dark:bg-neutral-900">
                         <div className="relative h-32 w-32 flex-none overflow-hidden rounded-full bg-neutral-100 ring-1 ring-neutral-200 dark:bg-neutral-800 dark:ring-neutral-700">

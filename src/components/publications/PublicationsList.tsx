@@ -48,10 +48,10 @@ export default function PublicationsList({ config, publications, embedded = fals
     const types = [...new Set(publications.map(p => p.type))].sort();
     if (embedded) return <EmbeddedPublicationsList config={config} publications={publications} embedded />;
     return <div>
-        <header className="mb-7"><h1 className="mb-4 text-4xl font-bold tracking-tight text-primary sm:text-5xl">{config.title}</h1><p className="max-w-2xl text-lg leading-8 text-neutral-600 dark:text-neutral-600">{config.description}</p>
-            <div className="mt-5 flex flex-wrap gap-3">{profiles?.orcid && <a className={`${chip} ${inactive}`} href={profiles.orcid} target="_blank" rel="noopener noreferrer">ORCID ↗</a>}{profiles?.google_scholar && <a className={`${chip} ${inactive}`} href={profiles.google_scholar} target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>}</div>
+        <header className="mb-5"><h1 className="mb-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">{config.title}</h1><p className="max-w-4xl text-base leading-7 text-neutral-600 dark:text-neutral-600">{config.description}</p>
+            <div className="mt-3 flex flex-wrap gap-3">{profiles?.orcid && <a className={`${chip} ${inactive}`} href={profiles.orcid} target="_blank" rel="noopener noreferrer">ORCID ↗</a>}{profiles?.google_scholar && <a className={`${chip} ${inactive}`} href={profiles.google_scholar} target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>}</div>
         </header>
-        <section aria-label="Search and filter publications" className="mb-8 rounded-xl border border-neutral-200 bg-accent/[0.035] p-5 sm:p-6 dark:border-neutral-800">
+        <section aria-label="Search and filter publications" className="mb-5 rounded-xl border border-neutral-200 bg-white p-4 sm:p-5 dark:bg-neutral-900 dark:border-neutral-800">
             <label htmlFor="publication-search" className="mb-3 block text-xs font-bold uppercase tracking-[0.15em] text-neutral-600 dark:text-neutral-600">Search title, author, journal, or year</label>
             <input id="publication-search" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Try “butternut”, “genomics”, or a year" className="w-full rounded-lg border border-neutral-200 bg-background px-4 py-3.5 text-base dark:border-neutral-200" />
             <div className="mt-4 flex flex-wrap gap-2" aria-label="Publication categories">{['all', ...categories].map(value => <button key={value} aria-pressed={category === value} onClick={() => setCategory(value)} className={`${chip} ${category === value ? active : inactive}`}>{value === 'all' ? 'All' : value}</button>)}</div>

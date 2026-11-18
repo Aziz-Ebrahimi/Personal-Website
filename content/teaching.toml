@@ -7,5 +7,6 @@ description = "From genes to healthier forests: practical learning for the next 
 title = "Introduction to Forest Genetics"
 subtitle = "FORS 5950 / FORS 8950 — Special Topics in Forestry and Natural Resources"
 date = "Spring 2027"
-content = "Explore how genetic and genomic tools help us grow better trees, conserve diversity, and restore healthier forests—through real forestry problems and hands-on thinking."
+content = "Explore how genetic and genomic tools help us grow better trees, conserve diversity, and restore healthier forests."
+description = "Learn the foundations of genetic variation, adaptation, and tree breeding, and explore how genomics supports forest conservation and improvement. Real-world examples and class discussions connect these concepts to practical forestry decisions."
 tags = ["3 credits", "Undergraduate & graduate", "Application-focused"]

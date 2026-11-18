@@ -11,6 +11,12 @@ research_interests = [
 ]
 
 [[sections]]
+id = "recruitment"
+type = "markdown"
+source = "recruitment.md"
+title = "Join our lab — Master’s and PhD opportunities"
+
+[[sections]]
 id = "about"
 type = "markdown"
 source = "bio.md"

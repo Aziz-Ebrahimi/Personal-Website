@@ -20,6 +20,7 @@ export interface CardItem {
     subtitle?: string;
     date?: string;
     content?: string;
+    description?: string;
     tags?: string[];
     link?: string;
     image?: string;

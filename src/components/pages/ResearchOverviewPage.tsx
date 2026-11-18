@@ -15,16 +15,16 @@ export default function ResearchOverviewPage({ config, projects = {} }: { config
     const item = items[selected] || items[0];
     const project = item?.link ? projects[item.link] : undefined;
     return <div>
-        <header className="mb-10 max-w-3xl">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-accent">Research program</p>
-            <h1 className="mb-5 text-4xl font-bold tracking-tight text-primary sm:text-5xl">{config.title}</h1>
-            <div className="text-lg leading-8 text-neutral-600 dark:text-neutral-600"><ReactMarkdown>{config.description || ''}</ReactMarkdown></div>
+        <header className="mb-6 grid gap-3 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-x-8">
+            <p className="lg:col-span-2 text-xs font-bold uppercase tracking-[0.18em] text-accent">Research program</p>
+            <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">{config.title}</h1>
+            <div className="text-base leading-7 text-neutral-600 dark:text-neutral-600"><ReactMarkdown>{config.description || ''}</ReactMarkdown></div>
         </header>
         {featured.map((entry) => {
             const project = entry.link ? projects[entry.link] : undefined;
             if (!project) return null;
-            return <section key={entry.link} aria-label={project.title} className="mb-16 border-t border-neutral-200 pt-8">
-                <div className="mb-6 flex flex-wrap items-center justify-between gap-3"><p className="text-xs font-bold uppercase tracking-[0.16em] text-accent">Featured research · {project.title}</p>{entry.link && <Link href={entry.link} className="text-sm font-bold text-accent hover:underline">Project page ↗</Link>}</div>
+            return <section key={entry.link} aria-label={project.title} className="mb-10 border-t border-neutral-200 pt-5">
+                <div className="mb-4 flex flex-wrap items-center justify-between gap-3"><p className="text-xs font-bold uppercase tracking-[0.16em] text-accent">Featured research · {project.title}</p>{entry.link && <Link href={entry.link} className="text-sm font-bold text-accent hover:underline">Project page ↗</Link>}</div>
                 <ProjectVisuals project={project} />
                 <ResearchProjectDetails project={project} embedded />
             </section>;

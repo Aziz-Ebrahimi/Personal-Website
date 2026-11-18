@@ -11,7 +11,7 @@ export default function ResearchProjectDetails({ project, embedded = false }: { 
  return <div>
             {project.workflow && !embedded && <h1 className="sr-only">{project.title}</h1>}
             {!project.workflow && <>
-            <header className="mb-12 max-w-5xl">
+            <header className="mb-6 max-w-5xl">
                 <div className="mb-4 text-sm font-bold uppercase tracking-[0.16em] text-accent">
                     {project.category}
                 </div>

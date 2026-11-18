@@ -54,8 +54,8 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
   }
 
   return (
-    <div className="mx-auto min-h-screen max-w-[1440px] bg-background px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(180px,1fr)_minmax(0,4fr)] lg:gap-14">
+    <div className="mx-auto min-h-screen max-w-[1440px] bg-background px-4 py-7 sm:px-6 sm:py-9 lg:px-8">
+      <div className="grid grid-cols-1 gap-7 lg:grid-cols-[minmax(180px,1fr)_minmax(0,4fr)] lg:gap-9">
         <div>
           <Profile
             author={data.author}
@@ -65,18 +65,16 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
           />
         </div>
 
-        <div className="space-y-10 text-[18px]">
+        <div className="space-y-7 text-base">
           {data.pagesToShow.map((page) => (
-            <section key={page.id} id={page.id} className="scroll-mt-24 space-y-8">
+            <section key={page.id} id={page.id} className="scroll-mt-24 space-y-6">
               {page.type === 'about' && page.sections.map((section: SectionConfig) => {
                 switch (section.type) {
                   case 'markdown':
                     return (
-                      <About
-                        key={section.id}
-                        content={section.content || ''}
-                        title={section.title}
-                      />
+                      <div key={section.id} className={section.id === 'recruitment' ? 'rounded-xl border border-accent/25 border-l-4 border-l-accent bg-accent/5 p-4 sm:p-5' : undefined}>
+                        <About content={section.content || ''} title={section.title} />
+                      </div>
                     );
                   case 'publications':
                     return (
