@@ -8,6 +8,12 @@ import type { ResearchProjectConfig } from '@/types/researchProject';
 export default function ResearchProjectDetails({ project, embedded = false }: { project: ResearchProjectConfig; embedded?: boolean }) {
  const categories = project.related_publications_categories ?? (project.related_publications_category ? [project.related_publications_category] : []);
  const Title = embedded ? 'h2' : 'h1';
+ if (project.simplified) return <div>
+    <Title className="mb-4 text-2xl font-bold tracking-tight text-primary">{project.title}</Title>
+    <p className="text-lg leading-8 text-neutral-600">{project.summary}</p>
+    <p className="mt-5 text-base text-neutral-500">To be added.</p>
+ </div>;
+
  return <div>
             {project.workflow && !embedded && <h1 className="sr-only">{project.title}</h1>}
             {!project.workflow && <>

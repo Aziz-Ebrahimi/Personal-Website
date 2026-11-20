@@ -26,11 +26,3 @@ content = "Connects remote sensing, feature-based machine learning, image-based 
 tags = ["Phenomics/Remote Sensing", "Digital Forestry", "Machine Learning"]
 image = "/research-ai.svg"
 link = "/research/phenomics-remote-sensing"
-
-[[items]]
-title = "Comparative and Phylogenomics of Juglandaceae"
-category = "Bioinformatics & Comparative Genomics"
-content = "Applies nuclear and plastid genome analyses, phylogenomics, comparative genomics, and pangenome approaches to investigate evolutionary relationships, genome diversity, and adaptation."
-tags = ["Bioinformatics/Machine Learning", "Comparative Genomics", "Phylogenomics"]
-image = "/research-ai.svg"
-link = "/research/bioinformatics-machine-learning"

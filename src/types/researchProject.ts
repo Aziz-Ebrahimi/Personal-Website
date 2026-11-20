@@ -22,6 +22,7 @@ export interface ResearchWorkflowContent {
 }
 
 export interface ResearchProjectConfig {
+    simplified?: boolean;
     workflow?: ResearchWorkflowContent;
     flight?: FlightAssets;
     visualization?: 'forest-health';
